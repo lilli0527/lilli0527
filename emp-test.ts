@@ -24,7 +24,7 @@ usersArray = [
 ]
 
 const empArray = [
-  ...this.dataSource;
+  ...this.dataSource,
 ].map(v => ({...v, isEdit: false}));
 
 onEdit(item: any) {
