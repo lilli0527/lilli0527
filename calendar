@@ -1,0 +1,5 @@
+npm install --save @fullcalendar/core
+npm install --save @fullcalendar/angular
+npm install --save @fullcalendar/daygrid
+npm install --save @fullcalendar/timegrid
+npm i @fullcalendar/list
