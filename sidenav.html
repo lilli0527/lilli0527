@@ -1,0 +1,50 @@
+<app-nav></app-nav>
+<mat-sidenav-container autosize>
+  <mat-sidenav [opened]="true" mode="side">
+    <mat-nav-list>
+      <div (click)="isExpanded = !isExpanded">
+        <mat-icon mat-list-icon class="chevron-button" [ngClass]="{ rotated: isExpanded }">chevron_right</mat-icon>
+      </div>
+
+      <mat-list-item [routerLink]="'emp'" class="menu-item" routerLinkActive="list-item-active">
+        <span class="entry">
+          <span class="icon material-symbols-outlined"> date_range </span>
+          <span class="text nav-text" *ngIf="isExpanded">行事曆 </span>
+        </span>
+      </mat-list-item>
+      <mat-list-item [routerLink]="'custList'" class="menu-item" routerLinkActive="list-item-active">
+        <span class="entry">
+          <span class="icon material-symbols-outlined"> group </span>
+          <span class="text nav-text" *ngIf="isExpanded">會員管理</span>
+        </span>
+      </mat-list-item>
+      <mat-list-item [routerLink]="'orderList'" class="menu-item" routerLinkActive="list-item-active">
+        <span class="entry">
+          <span class="icon material-symbols-outlined"> list_alt </span>
+          <span class="text nav-text" *ngIf="isExpanded">預約管理</span>
+        </span>
+      </mat-list-item>
+      <mat-list-item [routerLink]="'serviceList'" class="menu-item" routerLinkActive="list-item-active">
+        <span class="entry">
+          <span class="icon material-symbols-outlined"> library_add </span>
+          <span class="text nav-text" *ngIf="isExpanded">服務管理</span>
+        </span>
+      </mat-list-item>
+      <mat-list-item [routerLink]="'empList'" class="menu-item" routerLinkActive="list-item-active">
+        <span class="entry">
+          <span class="icon material-symbols-outlined"> manage_accounts</span>
+          <span class="text nav-text" *ngIf="isExpanded">員工管理</span>
+        </span>
+      </mat-list-item>
+      <!-- <a mat-list-item [routerLink]="'/loginEmp'" *ngIf="!emploginstatus" (click)="emplogout()">
+        <span class="entry">
+          <span class="icon material-symbols-outlined"> logout </span>
+        </span>
+        <span class="text nav-text">員工登出</span>
+      </a> -->
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
